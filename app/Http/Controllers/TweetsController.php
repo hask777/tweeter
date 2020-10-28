@@ -8,14 +8,13 @@ use App\Tweet;
 
 class TweetsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('store');
+        return view('home', [
+            'tweets' => auth()->user()->timeline()
+        ]);
+       
     }
 
     /**
@@ -45,7 +44,7 @@ class TweetsController extends Controller
             'body' => $attributes['body']
         ]);
 
-        return redirect('/home');
+        return redirect('/tweets');
     }
 
     /**
