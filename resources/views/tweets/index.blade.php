@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 
@@ -7,4 +7,12 @@
 
     @include('_timeline')
 
-@endsection
+@endsection --}}
+
+@component('components.app')
+    <div>
+        @include('_publish-tweet')
+
+        @include('_timeline')
+    </div>
+@endcomponent

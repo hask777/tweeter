@@ -31,14 +31,14 @@
         <p class="text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae odio ipsam, aut sed impedit consequatur quibusdam, tempore dolorem aperiam enim, esse maiores sit consequuntur eum ipsum autem alias culpa! Sequi!
         </p>
-
+        
             <img 
                 src="{{ auth()->user()->avatar }}" 
                 alt="{{ auth()->user()->email }}"
                 class="rounded-full mr-2 absolute profile_img"
                 style="width:150px; left:calc(50% - 75px); top: 50%;"
             />
-
+        
            
 
     </header>
