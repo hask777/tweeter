@@ -27,12 +27,23 @@
             </div>
 
             <div class="flex">
-                <form method="POST" action="/profiles/{{$user->name}}/follow">
-                    @csrf
-                    <button type="submit" class="rounded-full border border-gray-500 py-2 px-4 text-xs text-blue-500">
-                            Edit Profile
-                        </button>
-                </form>
+                {{-- @if(current_user()->is($user))
+                    <form method="GET" action="{{ $user->path('edit') }}">
+                        @csrf
+                        <button type="submit" class="rounded-full border border-gray-500 py-2 px-4 text-xs text-blue-500">
+                                Edit Profile
+                            </button>
+                    </form>
+                @endif --}}
+
+                @can('edit', $user)
+                    <form method="GET" action="{{ $user->path('edit') }}">
+                        @csrf
+                        <button type="submit" class="rounded-full border border-gray-500 py-2 px-4 text-xs text-blue-500">
+                                Edit Profile
+                            </button>
+                    </form>
+                @endcan
                
                 <x-follow-form :user="$user"></x-follow-form>
                

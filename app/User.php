@@ -82,8 +82,15 @@ class User extends Authenticatable
         return 'name';
     }
 
-    public function path()
+    public function url($path)
     {
-        return route('profile', $this->name);
+        return route($path, $this->name);
+    }
+
+    public function path($append = '')
+    {
+        $path = route('profile', $this->name);
+
+        return $append ? "{$path}/{$append}" : $path;
     }
 }
