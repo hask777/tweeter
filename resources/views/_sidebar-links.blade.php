@@ -19,18 +19,13 @@
 
     @auth
         <li>
-            {{-- <a
+            <a
                 class="font-bold text-lg mb-4 block"
                 href="{{ current_user()->path() }}"
             >
                 Profile
-            </a> --}}
-            <a
-            class="font-bold text-lg mb-4 block"
-            href="{{ route('profile', auth()->user()) }}"
-        >
-            Profile
-        </a>
+            </a>
+            
         </li>
 
         <li>
