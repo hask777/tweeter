@@ -30,7 +30,7 @@
             </header>
         </section>
         <section class="px-8">
-            <main class="container mx-auto">
+            <main class="container mx-auto pb-4">
                 <div class="lg:flex justify-between">
                     @if(auth()->check())
                         <div class="lg:w-32">

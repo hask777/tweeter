@@ -9,7 +9,7 @@ use App\Tweet;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Followable;
 
     /**
      * The attributes that are mass assignable.
@@ -71,29 +71,19 @@ class User extends Authenticatable
 
     public function tweets()
     {
-        return $this->hasMany(Tweet::class);
+        return $this->hasMany(Tweet::class)
+            ->latest();
     }
 
-
-    public function follow(User $user)
-    {
-        return $this->follows()->save($user);
-    }
-
-
-    public function follows()
-    {
-        return $this->belongsToMany(
-            User::class,
-            'follows',
-            'user_id',
-            'following_user_id'
-        );
-    }
-
+    /* Laravel 6 and older */
     public function getRouteKeyName()
     {
         // return parent::getRouteKeyName();
         return 'name';
+    }
+
+    public function path()
+    {
+        return route('profile', $this->name);
     }
 }
