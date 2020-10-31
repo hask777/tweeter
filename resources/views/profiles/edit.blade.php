@@ -143,6 +143,8 @@
             <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
                 Edit
             </button>
+
+            <a href="{{ $user->path() }}" class="ml-3 hover:underline">Cancel</a>
         </div>
 
     </form>

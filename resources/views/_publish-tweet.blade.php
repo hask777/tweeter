@@ -1,16 +1,16 @@
 <div class="border border-blue-400 rounded-lg px-8 py-6 mb-8">
     <form method="post" action="{{ route('home') }}">
         @csrf
-        <input 
+        <textarea 
             type="text"
             name="body" 
             id="" 
             class="w-full"
             placeholder="What`s up doc!"
-            
+            required
         >
 
-        </input>
+        </textarea>
 
         <hr class="my-4">
 
