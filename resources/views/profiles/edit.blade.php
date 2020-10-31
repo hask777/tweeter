@@ -64,8 +64,7 @@
                     class="border border-gray-400 p-2 w-full"
                     name="avatar"
                     id="avatar"
-                    {{-- value="{{$user->username}}" --}}
-                    required
+                    {{-- value="{{$user->avatar}}" --}}
                 >
 
                 <img src="{{ $user->avatar }}" alt="avatar" width="150px">

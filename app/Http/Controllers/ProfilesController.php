@@ -44,7 +44,7 @@ class ProfilesController extends Controller
                 'max:255'
             ],
             'avatar' => [
-                'required'
+                'file'
             ],
             'email' => [
                 'string', 
@@ -61,7 +61,11 @@ class ProfilesController extends Controller
             ],
         ]);
 
-        $attributes['avatar'] = request('avatar')->store('avatars');
+
+        if(request('avatar')){
+            $attributes['avatar'] = request('avatar')->store('avatars');
+
+        }
 
         $user->update($attributes);
 

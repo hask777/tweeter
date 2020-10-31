@@ -9,8 +9,8 @@
             >
 
             <img 
-                src="{{ auth()->user()->avatar }}" 
-                alt="{{ auth()->user()->email }}"
+                src="{{ $user->avatar }}" 
+                alt="{{ $user->email }}"
                 class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
                 style="left:50%"
                 width="150px"
